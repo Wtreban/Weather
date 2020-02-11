@@ -1,0 +1,73 @@
+body{
+    margin-top: 10px;
+    
+    background-color: lightblue;
+}
+.container{
+    max-width: 80rem;
+    height: 80vh;
+    border: 1px solid black;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows:20% 80%;
+    text-align: center;
+}
+
+.degrees{
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    margin-left: 2rem;
+    
+}
+span{
+    font-size: 40px;
+}
+
+.humidi{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    margin-left: 2rem;
+}
+
+h1{
+    font-size: 7rem;
+    padding-top: 10px;
+}
+h2{
+    font-size: 3rem;
+}
+h3{
+    font-size: 2rem;
+}
+
+h1, h2, h3, span{
+    margin: 0;
+}
+
+#city{
+    background-color: #7575ff;
+    font-size: 5rem;
+    padding-top: 25px;
+    animation: hoverpause 10s linear infinite;
+    background-repeat: repeat;
+
+}
+
+@keyframes hoverpause {
+    0% {
+      background-color: #7575ff;
+    }
+    40% {
+      background-color: green;
+    }
+    70% {
+      background-color: blue;
+    }
+    100%{
+        background-color: #7575ff;
+     } 
+    }
+  

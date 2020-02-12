@@ -17,9 +17,9 @@ $(document).ready(function() {
     function weather(lat,long){
 
         const proxyUrl = `https://cors-anywhere.herokuapp.com/`;
-        const apiCall = `${proxyUrl}http://api.openweathermap.org/data/2.5/weather?q=Tallinn&appid=aadf820a8e4be082f0d26c9807c300cc&units=metric`;
+        const apiCall = `${proxyUrl}https://api.darksky.net/forecast/5e107229917ba31c674da6176e27b702/59.43696,24.75353?units=si`;
+        //        const apiCall = `${proxyUrl}https://api.darksky.net/forecast/5e107229917ba31c674da6176e27b702/37.8267,-122.4233`;
 
-        //var apiCall =`http://api.openweathermap.org/data/2.5/weather?q=Tallinn&appid=aadf820a8e4be082f0d26c9807c300cc&units=metric`;
      
         $.getJSON(apiCall,function(data){
             console.log(data);
@@ -29,18 +29,17 @@ $(document).ready(function() {
 
 
     function updateDOM(data){
-        var city = data.name;
-        var temp = Math.round(data.main.temp);
-        var humi = data.main.humidity;
-        var desc = data.weather[0].description;
-        //var icon = data.weather[0].icon;
+        var city = data.timezone;
+        var temp = Math.round(data.currently.temperature)+"°C";
+        var humi = data.currently.summary;
+        var desc = data.currently.description;
+        var rain = data.currently.precipType;
 
         $('#city').html(city);
         $('#temp').html(temp);
         $('#humi').html(humi);
-
         $('#desc').html(desc);
-        //$('#icon').attr('src', icon); 
+        $('#rain').html(rain); 
     }
 
 });
